@@ -1,0 +1,58 @@
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #ffffff;
+    width: 150px;
+    height: 150px;
+    margin: 30px;
+    margin-right: 150px;
+  }
+  
+  .card .percent {
+    position: relative;
+  }
+  
+  .card svg {
+    position: relative;
+    width: 150px; /* Adjusted SVG size */
+  height: 150px;
+    transform: rotate(-90deg);
+  }
+  
+  .card svg circle {
+    fill: none;
+    stroke: #ececec; /* Background circle color */
+    stroke-width: 8; /* Adjusted stroke width for proportion */
+    stroke-linecap: round;
+    cx: 75; /* Center of the smaller SVG */
+    cy: 75;
+    r: 65; /* Radius for both circles */
+  }
+  
+  .card svg circle:last-of-type {
+    r: 65; /* Radius of the circle (reduced from 100 to 65) */
+    cx: 75; /* Adjust cx and cy to match the smaller SVG size */
+    cy: 75;
+    stroke-dasharray: calc(2 * 3.14 * 65); /* Circumference of the smaller circle */
+    stroke-dashoffset: calc((2 * 3.14 * 65) - ((2 * 3.14 * 65) * var(--percent)) / 100);
+    stroke: #109626;
+  }
+  
+  .card .number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .card .number h3 {
+    font-weight: 400;
+    font-size: 1.5rem;
+  }
+  
+  .card .number h3 span {
+    font-size: 0.9rem;
+  }
+  
