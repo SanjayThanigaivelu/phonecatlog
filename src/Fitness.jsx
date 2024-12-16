@@ -9,6 +9,7 @@ import { useForm,Controller } from 'react-hook-form';
 import workoutData from './workout.json';
 import ClockImage from './Clock.jpg'
 
+
 function Fitness() {
   const[forgetBoxOpen,setForgetBox]=useState(false);
   const[forgetBoxOpen1,setForgetBox1]=useState(false);
@@ -394,6 +395,10 @@ const initialValue=JSON.parse(localStorage.getItem("TotalSteps"));
       </div>
       
       <div className={`userInfo ${forgetBoxOpen ? 'blur-background' : ''}`} >
+
+     
+
+     
       <Modal open={forgetBoxOpen} onClose={boxModelClose} BackdropProps={{
   onClick:(e)=> e.stopPropagation()
  }}>
